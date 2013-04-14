@@ -46,6 +46,16 @@ ig.module('plugins.joncom.border-font')
             }
         },
 
+        // Returns the new width after accounting for borders.
+        _getNewFontWidth: function() {
+            var widthFromBorders = this.widthMap.length * (this.borderSize * 2);
+            var widthFromFont = 0;
+            for(var i=0; i<this.widthMap.length) {
+                widthFromFont += this.widthMap[i];
+            }
+            return widthFromBorders + widthFromFont;
+        },
+
         _getNonAlphaPixels: function(data) {
             var nonAlphaPixels = {};
             for(var x = 0; x < data.width; x++) {
