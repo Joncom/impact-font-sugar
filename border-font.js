@@ -9,14 +9,6 @@ ig.module('plugins.joncom.border-font')
         borderSize: 1,
 
         onLoad: function(event) {
-            var nonAlphaPixels = _getNonAlphaPixels(this.data);
-
-
-
-            this.parent(event);
-        },
-
-        _getNonAlphaPixels: function(image) {
             // Create an offscreen canvas.
             var canvas = ig.$new('canvas');
             canvas.width = image.width;
@@ -24,12 +16,41 @@ ig.module('plugins.joncom.border-font')
             // Draw image to canvas.
             var ctx = canvas.getContext('2d');
             ctx.drawImage(image, 0, 0);
-            // Determine which pixels are alpha and which are not.
+            // Determine which pixels are non-alpha.
             var data = ctx.getImageData(0, 0, image.width, image.height);
+            var pixels = _getNonAlphaPixels(data);
+
+
+
+
+
+            this.parent(event);
+        },
+
+        _createBorderData: function(image) {
+            // Create an offscreen canvas.
+            var canvas = ig.$new('canvas');
+            canvas.width = image.width + (2 * this.borderSize);
+            canvas.height = image.height + (2 * this.borderSize);
+            // Draw image to canvas.
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(image, this.borderSize, 0);
+            // Will use these pixels as starting points.
+            var pixels = _getNonAlphaPixels(image);
+            // Loop through pixels.
+            for (var x in pixels) {
+                for(var y in pixels[x]) {
+                    // draw to canvas here.
+                }
+
+            }
+        },
+
+        _getNonAlphaPixels: function(data) {
             var nonAlphaPixels = {};
-            for(var x = 0; x < canvas.width; x++) {
-                for(var y = 0; y < canvas.height; y++) {
-                    var alpha = data[((image.width * y) + x) * 4 + 3]; // alpha data for pixel
+            for(var x = 0; x < data.width; x++) {
+                for(var y = 0; y < data.height; y++) {
+                    var alpha = data[((data.width * y) + x) * 4 + 3]; // alpha data for pixel
                     // Is the pixel non-alpha?
                     if(alpha !== 0) {
                         // Remember that this x and y is non alpha!
