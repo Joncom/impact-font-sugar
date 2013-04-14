@@ -11,7 +11,7 @@ ig.module('plugins.joncom.border-font')
         onLoad: function(event) {
             // Create new offscreen canvas where we will build out new font.
             var canvas = ig.$new('canvas');
-            canvas.width = image.width;
+            canvas.width = this._getNewFontWidth();
             canvas.height = image.height;
             // Draw image to canvas.
             var ctx = canvas.getContext('2d');
@@ -54,6 +54,10 @@ ig.module('plugins.joncom.border-font')
                 widthFromFont += this.widthMap[i];
             }
             return widthFromBorders + widthFromFont;
+        },
+
+        _getNewFontHeight: function() {
+            return this.height + this.borderSize * 2;
         },
 
         _getNonAlphaPixels: function(data) {
