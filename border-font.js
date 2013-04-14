@@ -9,7 +9,7 @@ ig.module('plugins.joncom.border-font')
         borderSize: 1,
 
         onLoad: function(event) {
-            // Create an offscreen canvas.
+            // Create new offscreen canvas where we will build out new font.
             var canvas = ig.$new('canvas');
             canvas.width = image.width;
             canvas.height = image.height;
