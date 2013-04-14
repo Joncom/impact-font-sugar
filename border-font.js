@@ -12,7 +12,7 @@ ig.module('plugins.joncom.border-font')
             // Create new offscreen canvas where we will build out new font.
             var canvas = ig.$new('canvas');
             canvas.width = this._getNewFontWidth();
-            canvas.height = image.height;
+            canvas.height = this._getNewFontHeight();
             // Draw image to canvas.
             var ctx = canvas.getContext('2d');
             ctx.drawImage(image, 0, 0);
