@@ -50,7 +50,7 @@ ig.module('plugins.joncom.border-font')
         _getNewFontWidth: function() {
             var widthFromBorders = this.widthMap.length * (this.borderSize * 2);
             var widthFromFont = 0;
-            for(var i=0; i<this.widthMap.length) {
+            for(var i=0; i<this.widthMap.length; i++) {
                 widthFromFont += this.widthMap[i];
             }
             return widthFromBorders + widthFromFont;
