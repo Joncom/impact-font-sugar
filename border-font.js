@@ -13,8 +13,9 @@ ig.module('plugins.joncom.border-font')
             this.parent(event);
         },
 
-        // Returns two-dimensional: array[x][y] where each value is
-        // true if that x and y is non-alpha. Otherwise false.
+        // Returns two-dimensional array[x][y].
+        // Each value is either true, if that x/y is non-alpha.
+        // Otherwise false.
         _getNonAlphaPixels: function(image) {
             // Create an offscreen canvas.
             var canvas = ig.$new('canvas');
