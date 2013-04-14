@@ -56,6 +56,7 @@ ig.module('plugins.joncom.border-font')
             return widthFromBorders + widthFromFont;
         },
 
+        // Returns the new height after accounting for borders.
         _getNewFontHeight: function() {
             return this.height + this.borderSize * 2;
         },
