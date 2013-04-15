@@ -1,15 +1,16 @@
 ## Summary ##
-This plugin for ImpactJS extends ig.Font to allow for colored borders.
-Futhermore it allows you to alter the color of the font itself.
+This plugin for ImpactJS extends ig.Font to allow for colored borders. Futhermore it allows you to alter the color of the font itself.
+
+![Demo Screenshot](http://i.imgur.com/OqRpm0O.png)
 
 ## Demo ##
 http://www.commins.ca/impact-border-font/
 
 ## Installation ##
-Download the plugin here: 
+Download the plugin here:
 https://github.com/Joncom/impact-border-font/blob/master/lib/plugins/joncom/border-font.js
 
-Place the plugin in the directory: 
+Place the plugin in the directory:
 `/lib/plugins/joncom/'
 
 Load the plugin within any module you'd like. Example:
@@ -41,7 +42,7 @@ To red, for example:
 
 ###### borderSize ######
 Sets the thickness of the border in pixels.
-Default is 1. 
+Default is 1.
 Example: `var font = new ig.BorderFont('media/04b03.font.png', { borderSize: 2 });`
 
 ###### letterSpacing ######
