@@ -24,7 +24,7 @@ By default, this adds a black border and leaves the font color unchanged.
 `var font = new ig.BorderFont('media/04b03.font.png', { borderColor: '#FF000' });`
 
 ###### borderSize changes the thickness of the border (default is 1). ######
-Example: `var font = new ig.BorderFont('media/04b03.font.png', { borderSize: 2 });`
+`var font = new ig.BorderFont('media/04b03.font.png', { borderSize: 2 });`
 
 ###### letterSpacing changes the spacing between letters (default is 0). ######
-Example: `var font = new ig.BorderFont('media/04b03.font.png', { letterSpacing: 1 });
+`var font = new ig.BorderFont('media/04b03.font.png', { letterSpacing: 1 });
