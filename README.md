@@ -16,7 +16,7 @@ This plugin for ImpactJS extends `ig.Font` to allow for colored borders. Futherm
 By default, this adds a black border and leaves the font color unchanged.
 
 #### Options are set by passing an object when you create the font. ####
-`var font = new ig.BorderFont('media/04b03.font.png', options);`
+`var font = new ig.BorderFont('media/04b03.font.png', /* options go here */);`
 ###### fontColor changes the color of the font. ######
 `var font = new ig.BorderFont('media/04b03.font.png', { fontColor: '#FFFFFF' });`
 
