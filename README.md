@@ -9,13 +9,11 @@ This plugin for ImpactJS extends `ig.Font` to allow for colored borders. Futherm
 3. Load `'plugins.joncom.border-font'` within your game.
 
 ## Usage ##
-Check out `main.js` to see the demo code in action.
 
-You load a border font like you would a regular font.
-However, you call `ig.BorderFont` instead:
+#### Creating a border-font is like creating a regular font. ####
 `var font = new ig.BorderFont('media/04b03.font.png');`
 
-By default, this adds a black border and leaves the font color unchanged.
+(By default, this adds a black border and leaves the font color unchanged.)
 
 #### Options ####
 
