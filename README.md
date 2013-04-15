@@ -13,38 +13,18 @@ This plugin for ImpactJS extends `ig.Font` to allow for colored borders. Futherm
 #### Creating a border-font is like creating a regular font. ####
 `var font = new ig.BorderFont('media/04b03.font.png');`
 
-(By default, this adds a black border and leaves the font color unchanged.)
+By default, this adds a black border and leaves the font color unchanged.
 
-#### Options ####
-
-Additional settings can be passed in using the following syntax.
-`var font = new ig.BorderFont(path, options);`
-where `options` is an object.
-
-###### fontColor ######
-Changes the color of the font:
+#### Options are set by passing an object when you create the font. ####
+`var font = new ig.BorderFont('media/04b03.font.png', options);`
+###### fontColor changes the color of the font. ######
 `var font = new ig.BorderFont('media/04b03.font.png', { fontColor: '#FFFFFF' });`
 
-###### borderColor ######
-Sets the color of the border.
-To red, for example:
+###### borderColor changes the color of the border. ######
 `var font = new ig.BorderFont('media/04b03.font.png', { borderColor: '#FF000' });`
 
-###### borderSize ######
-Sets the thickness of the border in pixels.
-Default is 1.
+###### borderSize changes the thickness of the border (default is 1). ######
 Example: `var font = new ig.BorderFont('media/04b03.font.png', { borderSize: 2 });`
 
-###### letterSpacing ######
-The pixel space between letters.
-Default is 0.
+###### letterSpacing changes the spacing between letters (default is 0). ######
 Example: `var font = new ig.BorderFont('media/04b03.font.png', { letterSpacing: 1 });
-
-###### Multiple Options ######
-If you want to set several options together, it can be done like so:
-`var options = { letterSpacing: 1, borderSize: 2, fontColor: '#FFF', borderColor: '#000' };
-`var font = new ig.BorderFont('media/04b03.font.png', options);`
-
-
-
-
