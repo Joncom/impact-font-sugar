@@ -1,5 +1,5 @@
 ## Summary ##
-This plugin for ImpactJS extends ig.Font to allow for colored borders. Futhermore it allows you to alter the color of the font itself.
+This plugin for ImpactJS extends `ig.Font` to allow for colored borders. Futhermore it allows you to alter the color of the font itself.
 
 ![Demo Screenshot](http://i.imgur.com/OqRpm0O.png)
 
