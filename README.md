@@ -4,14 +4,9 @@ This plugin for ImpactJS extends `ig.Font` to allow for colored borders. Futherm
 ![Demo Screenshot](http://i.imgur.com/OqRpm0O.png)
 
 ## Installation ##
-Download the plugin here:
-https://github.com/Joncom/impact-border-font/blob/master/lib/plugins/joncom/border-font.js
-
-Place the plugin in the directory:
-`/lib/plugins/joncom/'
-
-Load the plugin within any module you'd like. Example:
-`.requires('plugins.joncom.border-font')`
+1. Download the plugin [here](https://raw.github.com/Joncom/impact-border-font/master/lib/plugins/joncom/border-font.js).
+2. Place plugin in the directory: `/lib/plugins/joncom/'.
+3. Load `'plugins.joncom.border-font'` within your game.
 
 ## Usage ##
 Check out `main.js` to see the demo code in action.
