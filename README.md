@@ -3,9 +3,6 @@ This plugin for ImpactJS extends `ig.Font` to allow for colored borders. Futherm
 
 ![Demo Screenshot](http://i.imgur.com/OqRpm0O.png)
 
-## Demo ##
-http://www.commins.ca/impact-border-font/
-
 ## Installation ##
 Download the plugin here:
 https://github.com/Joncom/impact-border-font/blob/master/lib/plugins/joncom/border-font.js
