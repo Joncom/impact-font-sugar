@@ -52,7 +52,7 @@ Example: `var font = new ig.BorderFont('media/04b03.font.png', { letterSpacing: 
 ###### Multiple Options ######
 If you want to set several options together, it can be done like so:
 `var options = { letterSpacing: 1, borderSize: 2, fontColor: '#FFF', borderColor: '#000' };
-`var font = new ig.BorderFont('media/04b03.font.png', options);
+`var font = new ig.BorderFont('media/04b03.font.png', options);`
 
 
 
