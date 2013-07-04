@@ -21,3 +21,7 @@ This ImpactJS plugin allows you to add borders to fonts, and change the color of
 
 ### Other options can also be set this way. ###
 `var font = new ig.Font('media/font.png', { letterSpacing: 1 });`
+
+### Set a different color for specific words. ###
+`font.draw("The [#000000 quick] brown fox", x, y);`
+![screenshot](http://i.imgur.com/sPGbbEU.png)
