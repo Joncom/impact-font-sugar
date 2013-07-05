@@ -28,5 +28,10 @@ This ImpactJS plugin allows you to add borders to fonts, and change the color of
 `font.draw("The [#000000 quick] brown fox", x, y);`
 
 ## TODO ##
-- Cache font, border, and line canvases individually so that slight variations do not require total reprocessing.
-- Allow preload option to specify colors intended for on-the-fly use.
+1. Cache font, border, and line canvases individually so that slight variations do not require total reprocessing.
+2. Allow preload option to specify colors intended for on-the-fly use.
+
+Regarding 1:
+media/font.png#size=1,layer=border,color=FFFFFF
+media/font.png#size=1,layer=font,color=FFFFFF
+media/font.png#size=1,layer=line
