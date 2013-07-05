@@ -32,6 +32,6 @@ This ImpactJS plugin allows you to add borders to fonts, and change the color of
 2. Allow preload option to specify colors intended for on-the-fly use.
 
 Regarding 1:
-media/font.png#size=1,layer=border,color=FFFFFF
-media/font.png#size=1,layer=font,color=FFFFFF
-media/font.png#size=1,layer=line
+media/font.png?layer=border&size=1&color=#FFFFFF
+media/font.png?layer=line&size=1
+media/font.png?layer=font&size=1&color=#FFFFFF
