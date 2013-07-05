@@ -28,4 +28,5 @@ This ImpactJS plugin allows you to add borders to fonts, and change the color of
 `font.draw("The [#000000 quick] brown fox", x, y);`
 
 ## TODO ##
+- Fix for unnecessary spacing of font layer that may be cached.
 - Allow preload option to specify colors intended for on-the-fly use.
