@@ -1,13 +1,8 @@
 /*
- * Plugin for ImpactJS which adds borders to fonts.
- *
  * @author   Jonathan Commins
  * @email    joncom@gmail.com
- * @url      https://github.com/Joncom/impact-font-border/blob/master/lib/plugins/joncom/border-font.js
- * @created  April 14, 2013
- *
+ * @url      https://github.com/Joncom/impact-font-sugar/
  */
-
 ig.module('plugins.joncom.font-sugar.font')
 .requires('impact.font')
 .defines(function() {
