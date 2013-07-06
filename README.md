@@ -1,7 +1,9 @@
 ## Summary ##
 This ImpactJS plugin allows you to customize your fonts. Add borders. Change the color. It can even change specific words or characters on-the-fly.
 
-![screenshot](http://i.imgur.com/JLzjPfe.png)
+![border-screenshot](http://i.imgur.com/JLzjPfe.png)
+
+![color-screenshot](http://i.imgur.com/h408CrP.png)
 
 ## Installation ##
 1. Put plugin here: `/lib/plugins/joncom/font-sugar/`
