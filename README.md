@@ -4,9 +4,8 @@ This ImpactJS plugin allows you to add borders to fonts, and change the color of
 ![Demo Screenshot](http://i.imgur.com/OqRpm0O.png)
 
 ## Installation ##
-1. Download the plugin [here](https://raw.github.com/Joncom/impact-font-borders/master/lib/plugins/joncom/font-borders.js).
-2. Place plugin in the directory: `/lib/plugins/joncom/`.
-3. Load `'plugins.joncom.font-borders'` within your game.
+1. Put plugin here: `/lib/plugins/joncom/font-sugar/`
+2. Require `'plugins.joncom.font-sugar.font'`.
 
 ## Examples ##
 
