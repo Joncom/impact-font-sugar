@@ -69,9 +69,9 @@ ig.module('plugins.joncom.font-sugar.font')
                 canvas.width = this.borderLayer.data.width;
                 canvas.height = this.borderLayer.data.height;
                 var context = canvas.getContext('2d');
-                context.drawImage(this.fontLayer.data, 0, 0);
                 context.drawImage(this.borderLayer.data, 0, 0);
                 context.drawImage(this.lineLayer.data, 0, 0);
+                context.drawImage(this.fontLayer.data, 0, 0);
 
                 this.data = canvas;
             }
