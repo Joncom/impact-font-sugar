@@ -288,39 +288,23 @@ ig.module('plugins.joncom.font-sugar.font')
 
             var thickness = this.borderSize * ig.system.scale;
 
-            // Left
-            for(var left = 1; left <= thickness; left++) {
-                newContext.drawImage(oldContext.canvas, -left, 0);
+            for(var x = 1; x <= thickness; x++) {
+                newContext.drawImage(oldContext.canvas, -x, 0);
+                newContext.drawImage(oldContext.canvas, x, 0);
             }
-            // Right
-            for(var right = 1; right <= thickness; right++) {
-                newContext.drawImage(oldContext.canvas, right, 0);
-            }
-            // Up
-            for(var up = 1; up <= thickness; up++) {
-                newContext.drawImage(oldContext.canvas, 0, -up);
-            }
-            // Down
-            for(var down = 1; down <= thickness; down++) {
-                newContext.drawImage(oldContext.canvas, 0, down);
+            for(var y = 1; y <= thickness; y++) {
+                newContext.drawImage(oldContext.canvas, 0, -y);
+                newContext.drawImage(oldContext.canvas, 0, y);
             }
             if(this.fillCorners) {
-                // Top Left
-                for(up = 1; up <= thickness; up++)
-                    for(left = 1; left <= thickness; left++)
-                        newContext.drawImage(oldContext.canvas, -left, up);
-                // Bottom Left
-                for(down = 1; down <= thickness; down++)
-                    for(left = 1; left <= thickness; left++)
-                        newContext.drawImage(oldContext.canvas, -left, -down);
-                // Top Right
-                for(up = 1; up <= thickness; up++)
-                    for(right = 1; right <= thickness; right++)
-                        newContext.drawImage(oldContext.canvas, right, -up);
-                // Bottom Right
-                for(down = 1; down <= thickness; down++)
-                    for(right = 1; right <= thickness; right++)
-                        newContext.drawImage(oldContext.canvas, right, down);
+                for(var y = 1; y <= thickness; y++) {
+                    for(var x = 1; x <= thickness; x++) {
+                        newContext.drawImage(oldContext.canvas, -x, y);
+                        newContext.drawImage(oldContext.canvas, -x, -y);
+                        newContext.drawImage(oldContext.canvas, x, y);
+                        newContext.drawImage(oldContext.canvas, x, -y);
+                    }
+                }
             }
 
             this._convertNonAlphaPixelsInCanvasToColor(canvas, this.borderColor);
