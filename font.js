@@ -332,7 +332,7 @@ ig.module('plugins.joncom.font-sugar.font')
         _convertNonAlphaPixelsInCanvasToColor: function(canvas, color) {
             var context = canvas.getContext('2d');
             context.globalCompositeOperation = 'source-in';
-            context.fillStyle = '#FF0000';
+            context.fillStyle = color;
             context.fillRect(0, 0, canvas.width, canvas.height);
         },
 
