@@ -55,8 +55,7 @@ ig.module('plugins.joncom.font-sugar.font')
 
             if(this.fontColor) {
                 var canvas = this.data;
-                var color = this._getRGBFromHex(this.fontColor);
-                this._convertNonAlphaPixelsInCanvasToColor(canvas, color);
+                this._convertNonAlphaPixelsInCanvasToColor(canvas, this.fontColor);
             }
 
             if(this.borderColor && this.borderSize >= 1) {
@@ -332,18 +331,9 @@ ig.module('plugins.joncom.font-sugar.font')
 
         _convertNonAlphaPixelsInCanvasToColor: function(canvas, color) {
             var context = canvas.getContext('2d');
-            var fontData = context.getImageData(0, 0, canvas.width, canvas.height);
-            var pixels = this._getNonAlphaPixels(fontData);
-            for (var x in pixels) {
-                x = parseInt(x);
-                for (var y in pixels[x]) {
-                    y = parseInt(y);
-                    fontData.data[((fontData.width * y) + x) * 4] = color.r; // red
-                    fontData.data[((fontData.width * y) + x) * 4 + 1] = color.g; // green
-                    fontData.data[((fontData.width * y) + x) * 4 + 2] = color.b; // blue
-                }
-            }
-            context.putImageData(fontData, 0, 0);
+            context.globalCompositeOperation = 'source-in';
+            context.fillStyle = '#FF0000';
+            context.fillRect(0, 0, canvas.width, canvas.height);
         },
 
         // Create unique path based on border and font color, and border size.
