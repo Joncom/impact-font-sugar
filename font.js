@@ -360,45 +360,6 @@ ig.module('plugins.joncom.font-sugar.font')
             return { r: r, g: g, b: b };
         },
 
-        // Returns an object containing the pixels which border the given pixel.
-        _getBorderPixels: function(x, y) {
-            var pixels = {};
-            // Left
-            for(var left = 1; left <= this.borderSize * ig.system.scale; left++) {
-                if(typeof pixels[x-left] === 'undefined') pixels[x-left] = {};
-                pixels[x-left][y] = true;
-            }
-            // Right
-            for(var right = 1; right <= this.borderSize * ig.system.scale; right++) {
-                if(typeof pixels[x+right] === 'undefined') pixels[x+right] = {};
-                pixels[x+right][y] = true;
-            }
-            // Vertical
-            if(typeof pixels[x] === 'undefined') pixels[x] = {};
-            for(var up = 1; up <= this.borderSize * ig.system.scale; up++) pixels[x][y-up] = true; // Up
-            for(var down = 1; down <= this.borderSize * ig.system.scale; down++) pixels[x][y+down] = true; // Down
-            // Corners
-            if(this.fillCorners) {
-                // Top Left
-                for(up = 1; up <= this.borderSize * ig.system.scale; up++)
-                    for(left = 1; left <= this.borderSize * ig.system.scale; left++)
-                        pixels[x-left][y-up] = true;
-                // Bottom Left
-                for(down = 1; down <= this.borderSize * ig.system.scale; down++)
-                    for(left = 1; left <= this.borderSize * ig.system.scale; left++)
-                        pixels[x-left][y+down] = true;
-                // Top Right
-                for(up = 1; up <= this.borderSize * ig.system.scale; up++)
-                    for(right = 1; right <= this.borderSize * ig.system.scale; right++)
-                        pixels[x+right][y-up] = true;
-                // Bottom Right
-                for(down = 1; down <= this.borderSize * ig.system.scale; down++)
-                    for(right = 1; right <= this.borderSize * ig.system.scale; right++)
-                        pixels[x+right][y+down] = true;
-            }
-            return pixels;
-        },
-
         // Returns the new width after accounting for borders.
         _getNewFontWidth: function() {
             var widthFromBorders = this.widthMap.length * (this.borderSize * 2);
@@ -411,22 +372,6 @@ ig.module('plugins.joncom.font-sugar.font')
         // Returns the new height after accounting for borders.
         _getNewFontHeight: function() {
             return (this.height + this.borderSize * 2) * ig.system.scale;
-        },
-
-        _getNonAlphaPixels: function(image) {
-            var nonAlphaPixels = {};
-            for(var x = 0; x < image.width; x++) {
-                for(var y = 0; y < image.height; y++) {
-                    var alpha = image.data[((image.width * y) + x) * 4 + 3]; // alpha data for pixel
-                    // Is the pixel non-alpha?
-                    if(alpha !== 0) {
-                        // Remember that this x and y is non alpha!
-                        if(typeof nonAlphaPixels[x] === 'undefined') nonAlphaPixels[x] = {};
-                        nonAlphaPixels[x][y] = true;
-                    }
-                }
-            }
-            return nonAlphaPixels;
         }
 
     });
