@@ -20,7 +20,7 @@ ig.module('plugins.joncom.font-sugar.font')
         borderCanvas: null,
         lineCanvas: null,
 
-        revertCanvas: null,
+        reversionCanvas: null,
         alternateFont: null,
 
         staticInstantiate: function(path, settings) {
@@ -77,7 +77,7 @@ ig.module('plugins.joncom.font-sugar.font')
                 this.data = canvas;
             }
 
-            this.revertCanvas = this.data;
+            this.reversionCanvas = this.data;
         },
 
         draw: function( text, x, y, align ) {
@@ -151,7 +151,7 @@ ig.module('plugins.joncom.font-sugar.font')
         },
 
         revertFontColor: function() {
-            this.data = this.revertCanvas;
+            this.data = this.reversionCanvas;
         },
 
         getColorAtStartOfString: function(string) {
