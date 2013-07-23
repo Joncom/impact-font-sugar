@@ -286,38 +286,18 @@ ig.module('plugins.joncom.font-sugar.font')
             var newContext = canvas.getContext('2d');
             var oldContext = this.data.getContext('2d');
 
-            var newData = newContext.getImageData(0, 0, canvas.width, canvas.height);
-            var oldData = oldContext.getImageData(0, 0, this.data.width, this.data.height);
+            var thickness = this.borderSize * ig.system.scale;
 
-            var color = this._getRGBFromHex(this.borderColor);
-            var fontPixels = this._getNonAlphaPixels(oldData);
+            newContext.drawImage(oldContext.canvas, 0, thickness);
+            newContext.drawImage(oldContext.canvas, thickness, thickness);
+            newContext.drawImage(oldContext.canvas, thickness, 0);
+            newContext.drawImage(oldContext.canvas, thickness, -thickness);
+            newContext.drawImage(oldContext.canvas, 0, -thickness);
+            newContext.drawImage(oldContext.canvas, -thickness, -thickness);
+            newContext.drawImage(oldContext.canvas, -thickness, 0);
+            newContext.drawImage(oldContext.canvas, -thickness, thickness);
 
-            for (var px in fontPixels) {
-                px = parseInt(px);
-                for (var py in fontPixels[px]) {
-                    py = parseInt(py);
-
-                    var borderPixels = this._getBorderPixels(px, py);
-
-                    for (var bx in borderPixels) {
-                        bx = parseInt(bx);
-                        for (var by in borderPixels[bx]) {
-                            by = parseInt(by);
-
-                            if (typeof fontPixels[bx] !== 'undefined' && typeof fontPixels[bx][by] !== 'undefined') {
-                                continue; // Do not draw borders inside of font.
-                            }
-
-                            newData.data[((newData.width * by) + bx) * 4] = color.r; // red
-                            newData.data[((newData.width * by) + bx) * 4 + 1] = color.g; // green
-                            newData.data[((newData.width * by) + bx) * 4 + 2] = color.b; // blue
-                            newData.data[((newData.width * by) + bx) * 4 + 3] = 255; // alpha
-                        }
-                    }
-                }
-            }
-
-            newContext.putImageData(newData, 0, 0);
+            this._convertNonAlphaPixelsInCanvasToColor(canvas, this.borderColor);
 
             var image = new ig.ImageFromCanvas(path, canvas);
             return image;
