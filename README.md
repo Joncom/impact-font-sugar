@@ -27,6 +27,3 @@ This ImpactJS plugin allows you to customize your fonts. Add borders. Change the
 ![screenshot](http://i.imgur.com/sPGbbEU.png)
 
 `font.draw("The [#000000 quick] brown fox", x, y);`
-
-## TODO ##
-- Allow preload option to specify colors intended for on-the-fly use.
