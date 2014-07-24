@@ -80,6 +80,11 @@ ig.module('plugins.font2')
         },
 
         draw: function( text, x, y, align ) {
+
+            if (!this.loaded) {
+                return;
+            }
+
             if( typeof(text) != 'string' ) {
                 text = text.toString();
             }
