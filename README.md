@@ -14,16 +14,16 @@ This ImpactJS plugin allows you to customize your fonts. Add borders. Change the
 ### Add a black border to a font. ###
 `var font = new ig.Font('media/font.png', { borderColor: '#000' });`
 
+### Set thickness of that border. ###
+`var font = new ig.Font('media/font.png', { borderColor: '#000', borderSize: 2 });`
+
 ### Change the color of a font. ###
 `var font = new ig.Font('media/font.png', { fontColor: '#F00' });`
-
-### Set thickness of a border. ###
-`var font = new ig.Font('media/font.png', { borderColor: '#000', borderSize: 2 });`
 
 ### Other options can also be set this way. ###
 `var font = new ig.Font('media/font.png', { letterSpacing: 1 });`
 
-### Set a different color for specific words. ###
+### Set a different color for a specific word. ###
 ![screenshot](http://i.imgur.com/sPGbbEU.png)
 
 `font.draw("The [#000000 quick] brown fox", x, y);`
