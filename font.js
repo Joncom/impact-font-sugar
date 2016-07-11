@@ -319,8 +319,13 @@ ig.module('plugins.font2')
         },
 
         _ensureDataIsCanvas: function() {
-            if(ig.system.scale === 1) {
-                this.resize(ig.system.scale);
+            if(this.data instanceof HTMLImageElement) {
+                var canvas = ig.$new('canvas');
+                canvas.width = this.data.width;
+                canvas.height = this.data.height;
+                var context = canvas.getContext('2d');
+                context.drawImage(this.data, 0, 0);
+                this.data = canvas;
             }
         },
 
