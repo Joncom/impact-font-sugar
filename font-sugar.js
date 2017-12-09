@@ -3,7 +3,7 @@
  * @email    joncom@gmail.com
  * @url      https://github.com/Joncom/impact-font-sugar/
  */
-ig.module('plugins.font2')
+ig.module('plugins.font-sugar')
 .requires('impact.font')
 .defines(function() {
 
