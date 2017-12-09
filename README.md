@@ -6,8 +6,8 @@ This ImpactJS plugin allows you to customize your fonts. Add borders. Change the
 ![color-screenshot](http://i.imgur.com/h408CrP.png)
 
 ## Installation ##
-1. Put plugin here: `/lib/plugins/font2.js`
-2. Require `'plugins.font2'`.
+1. Put plugin here: `/lib/plugins/font-sugar.js`
+2. Require `'plugins.font-sugar'`.
 
 ## Examples ##
 
