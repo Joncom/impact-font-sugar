@@ -373,10 +373,7 @@ ig.module('plugins.font-sugar')
         // Returns the new width after accounting for borders.
         _getNewFontWidth: function() {
             var widthFromBorders = this.widthMap.length * (this.borderSize * 2);
-            var widthFromSpacing = (this.widthMap.length - 1);
-            var widthFromFont = 0;
-            for(var i=0; i<this.widthMap.length; i++) widthFromFont += this.widthMap[i];
-            return (widthFromBorders + widthFromFont + widthFromSpacing) * ig.system.scale;
+            return (widthFromBorders + this.data.width) * ig.system.scale;
         },
 
         // Returns the new height after accounting for borders.
